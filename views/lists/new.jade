@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  header 
+  main 
+    h1 New List
+    form(method="post" action="/lists/new")
+      input(name="title" placeholder="title") 
+      p
+      input(name="item1" placeholder="item")
+      p
+      input(type="submit" value="Create List")
+  footer
