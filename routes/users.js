@@ -19,9 +19,8 @@ router.post('/signup', function(req, res, next){
                                 username: req.body.username,
                                 email: req.body.email})
   } else {
-    script.addUser(req.body.username, req.body.email, req.body.createPassword).then(function(){
-      
-    })
+    script.addUser(req.body.username, req.body.email, req.body.createPassword)
+    res.redirect('/lists')
   }
 })
 
