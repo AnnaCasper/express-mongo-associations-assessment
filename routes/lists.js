@@ -17,6 +17,13 @@ router.get('/new', function(req, res, next){
 
 router.post("/new", function(req, res, next){
   var errors = validations.validateNew(req.body.title, req.body.item);
+  if(errors.length > 0){
+    res.render('lists/new', {errorMessage: 'Please fix the errors listed below:', errors: errors})
+  } else {
+    script.addList(req.body.title, req.body.item).then(function(){
+      res.redirect('/lists')
+    })
+  }
 })
 
 
