@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1 Lists on Lists on Lists
-  p 
+  h1 LystMkr
+  p
+  h1 Login
+  form(method="post" action="/users/login")
+    input(type="text" name="email" placeholder="Email")
+    p
+    input(type="password" name="password" placeholder="Password")
+    p
+    input(type="submit" value="Login")
+  p Don't have an account? 
+    a(href="/users/signup") Sign Up!

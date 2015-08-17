@@ -4,6 +4,10 @@ block content
   header 
   main 
     h1 New List
+    if errors
+      p.errors #{errorMessage}
+      for error in errors
+        p.errors #{error}
     form(method="post" action="/lists/new")
       input(name="title" placeholder="title") 
       p
