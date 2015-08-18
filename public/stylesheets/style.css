@@ -95,8 +95,8 @@ header {
   text-align: left;
   border-bottom: 1px solid #779FA1;
   height: 30px;
-  overflow: auto;
-  padding-left: 85px; }
+  padding-left: 85px;
+  line-height: 30px; }
 
 .side {
   position: absolute;
@@ -128,7 +128,6 @@ header {
 .miniItem {
   border-bottom: 1px solid #779FA1;
   height: 30px;
-  overflow: auto;
   padding-left: 65px; }
 
 .miniSide {
