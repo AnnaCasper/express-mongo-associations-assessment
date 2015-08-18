@@ -269,11 +269,15 @@ fieldset {
   cursor: pointer; }
 
 .additional {
+  margin: 0 auto;
   font-size: 30px;
-  width: 60px;
-  height: 60px;
+  font-weight: bold;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
   background-color: #779FA1;
   color: #564154;
-  padding-left: 10px;
-  padding-right: 10px;
   border-radius: 5px; }
+
+.additional:hover {
+  cursor: pointer; }
