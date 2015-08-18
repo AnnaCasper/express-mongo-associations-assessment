@@ -77,3 +77,42 @@
   height: 400px;
   margin: 0 auto;
 }
+
+.listAll {
+  width: 30%;
+  height: 400px;
+  margin: 0 auto;
+  background-color: $white;
+  margin-top: 40px;
+  box-shadow: 10px 10px 10px $darkpurple;
+  overflow: auto;
+  border-radius: 2px;
+}
+
+.titleAll {
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid $blue;
+}
+
+.itemAll {
+  text-align: left;
+  border-bottom: 1px solid $blue;
+  height: 30px;
+  padding-left: 85px;
+  line-height: 30px;
+}
+
+.sideAll {
+  position: absolute;
+  border-right: 2px solid $orange;
+  height: 400px;
+  width: 80px;
+}
+
+.checkboxAll {
+  float: left;
+  height: 25px;
+  width: 30px;
+}

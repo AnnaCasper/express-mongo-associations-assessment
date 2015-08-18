@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  header 
+    a(href="/users/logout")
+      p.logout Logout
+    a(href="/lists")
+      h1.logo LystMkr
+  main
+    for list in lists
+      a(href="/lists/" + listid + "/edit")
+        div.listAll
+          div.sideAll
+          div.titleAll 
+            h1 #{list.name}
+          for item in list.items
+            div.itemAll
+              input(type="checkbox" class="checkbox")
+              p #{item}
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+          //- div.itemAll
+  footer

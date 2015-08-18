@@ -145,6 +145,40 @@ header {
   height: 400px;
   margin: 0 auto; }
 
+.listAll {
+  width: 30%;
+  height: 400px;
+  margin: 0 auto;
+  background-color: #E0CBA8;
+  margin-top: 40px;
+  box-shadow: 10px 10px 10px #564154;
+  overflow: auto;
+  border-radius: 2px; }
+
+.titleAll {
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #779FA1; }
+
+.itemAll {
+  text-align: left;
+  border-bottom: 1px solid #779FA1;
+  height: 30px;
+  padding-left: 85px;
+  line-height: 30px; }
+
+.sideAll {
+  position: absolute;
+  border-right: 2px solid #FF6542;
+  height: 400px;
+  width: 80px; }
+
+.checkboxAll {
+  float: left;
+  height: 25px;
+  width: 30px; }
+
 html {
   font-size: 1em; }
 
