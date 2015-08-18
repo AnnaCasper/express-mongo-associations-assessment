@@ -27,7 +27,9 @@ router.get('/new', function(req, res, next){
 });
 
 router.post("/new", function(req, res, next){
-  validations.newList(req.body.title, req.body.item, req.session.currentUser).then(function (data) {
+  var items = [req.body.item, req.body.item1, req.body.item2, req.body.item3, req.body.item4, req.body.item5, req.body.item6, req.body.item7, req.body.item8, req.body.item9]
+  validations.newList(req.body.title, items, req.session.currentUser).then(function (data) {
+    console.log(data);
     if(data === 'success'){
       res.redirect('/lists')
     } else {

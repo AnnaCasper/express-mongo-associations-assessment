@@ -151,8 +151,9 @@ header {
   height: 400px;
   margin: 0 auto;
   background-color: #E0CBA8;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 35px;
+  margin-bottom: 20px;
   box-shadow: 10px 10px 10px #564154;
   overflow: auto;
   border-radius: 2px; }
@@ -247,7 +248,7 @@ input {
 
 fieldset {
   width: 30%;
-  height: 400px;
+  height: 600px;
   margin: 0 auto;
   background-color: #E0CBA8;
   margin-top: 40px;
