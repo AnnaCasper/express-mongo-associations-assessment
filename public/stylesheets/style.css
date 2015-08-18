@@ -248,7 +248,6 @@ input {
   padding-right: 10px; }
 
 fieldset {
-  display: inline;
   width: 30%;
   height: 600px;
   margin: 0 auto;
@@ -258,7 +257,8 @@ fieldset {
   overflow: auto;
   border-radius: 3px;
   text-align: center;
-  padding: 20px; }
+  padding: 20px;
+  margin-bottom: 40px; }
 
 .button {
   width: 120px;
@@ -309,3 +309,7 @@ fieldset {
 
 .saveEdits:hover {
   cursor: pointer; }
+
+.hidden {
+  visibility: hidden;
+  display: none; }

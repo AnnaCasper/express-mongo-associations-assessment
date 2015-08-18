@@ -20,7 +20,26 @@ router.get('/new', function(req, res, next){
 });
 
 router.post("/new", function(req, res, next){
-  var items = [req.body.item, req.body.item1, req.body.item2, req.body.item3, req.body.item4, req.body.item5, req.body.item6, req.body.item7, req.body.item8, req.body.item9]
+  var items = [{item: req.body.item,
+                check: req.body.checkItem},
+                {item: req.body.item1,
+                check: req.body.checkItem1},
+                {item: req.body.item2,
+                check: req.body.checkItem2},
+                {item: req.body.item3,
+                check: req.body.checkItem3},
+                {item: req.body.item4,
+                check: req.body.checkItem4},
+                {item: req.body.item5,
+                check: req.body.checkItem5},
+                {item: req.body.item6,
+                check: req.body.checkItem6},
+                {item: req.body.item7,
+                check: req.body.checkItem7},
+                {item: req.body.item8,
+                check: req.body.checkItem8},
+                {item: req.body.item9,
+                check: req.body.checkItem9}]
   validations.newList(req.body.title, items, req.session.currentUser).then(function (data) {
     console.log(data);
     if(data === 'success'){
