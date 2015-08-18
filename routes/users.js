@@ -12,7 +12,8 @@ router.get('/signup', function(req, res, next){
 })
 
 router.post('/signup', function(req, res, next){
-  var errors = validations.signUp(req.body.username, req.body.email, req.body.createPassword, req.body.confirmPassword)
+  var errors = validations.signUp(req.body.username, req.body.email, req.body.createPassword, req.body.confirmPassword);
+  console.log(errors);
   if(errors.length > 0){
     res.render('users/new', {errorMessage: 'Please correct the errors listed below:',
                                 errors: errors,
