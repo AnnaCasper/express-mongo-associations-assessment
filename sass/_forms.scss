@@ -11,6 +11,7 @@ input {
 }
 
 fieldset {
+  display: inline;
   width: 30%;
   height: 600px;
   margin: 0 auto;
@@ -48,5 +49,33 @@ fieldset {
   border-radius: 5px;
 }
 .additional:hover{
+  cursor: pointer;
+}
+
+.itemInput {
+  height: 25px;
+  width:570px;
+  background-color: $white;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  color: $darkpurple;
+  border: 1px solid $white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.saveEdits {
+  margin: 0 auto;
+  float: right;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: $orange;
+  border: 2px solid $darkpurple;
+  margin: 20px;
+}
+
+.saveEdits:hover {
   cursor: pointer;
 }

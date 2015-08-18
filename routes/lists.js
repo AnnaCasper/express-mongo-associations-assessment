@@ -10,13 +10,6 @@ router.get('/', function(req, res, next){
   }
 });
 
-router.get('/show', function(req, res, next) {
-  if(req.session.currentUser){
-    res.render('lists/show');
-  } else {
-    res.redirect('/');
-  }
-});
 
 router.get('/new', function(req, res, next){
   if(req.session.currentUser){
@@ -48,6 +41,14 @@ router.get('/showAll', function (req, res, next) {
 router.get('/:id/edit', function (req, res, next) {
   validations.findOneList(req.params.id).then(function (list) {
     res.render('lists/edit', {list: list})
+  })
+});
+
+router.post('/:id/delete', function (req, res, next) {
+  validations.delete(req.params.id).then(function (data) {
+    if(data === 'success'){
+      res.redirect('/lists/showAll')
+    }
   })
 })
 

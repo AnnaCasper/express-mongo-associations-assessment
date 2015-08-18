@@ -76,6 +76,7 @@ header {
   line-height: 80px; }
 
 .list {
+  display: block;
   width: 50%;
   height: 600px;
   margin: 0 auto;
@@ -247,6 +248,7 @@ input {
   padding-right: 10px; }
 
 fieldset {
+  display: inline;
   width: 30%;
   height: 600px;
   margin: 0 auto;
@@ -281,4 +283,29 @@ fieldset {
   border-radius: 5px; }
 
 .additional:hover {
+  cursor: pointer; }
+
+.itemInput {
+  height: 25px;
+  width: 570px;
+  background-color: #E0CBA8;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  color: #564154;
+  border: 1px solid #E0CBA8;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.saveEdits {
+  margin: 0 auto;
+  float: right;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: #FF6542;
+  border: 2px solid #564154;
+  margin: 20px; }
+
+.saveEdits:hover {
   cursor: pointer; }
