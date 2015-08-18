@@ -1,4 +1,3 @@
-
 var add = document.getElementsByClassName('additional')[0];
 
 add.addEventListener('click', function () {
@@ -8,4 +7,4 @@ add.addEventListener('click', function () {
   input.placeholder = 'Item'
   document.getElementById('extra').appendChild(input)
   document.getElementById('extra').appendChild(p)
-}); 
+});
