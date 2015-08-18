@@ -146,11 +146,13 @@ header {
   margin: 0 auto; }
 
 .listAll {
+  float: left;
   width: 30%;
   height: 400px;
   margin: 0 auto;
   background-color: #E0CBA8;
   margin-top: 40px;
+  margin-left: 35px;
   box-shadow: 10px 10px 10px #564154;
   overflow: auto;
   border-radius: 2px; }

@@ -38,6 +38,7 @@ router.post("/new", function(req, res, next){
 
 router.get('/showAll', function (req, res, next) {
   validations.showAll(req.session.currentUser).then(function (lists) {
+    console.log(lists);
     res.render('lists/showAll', {lists: lists})
   })
 })
