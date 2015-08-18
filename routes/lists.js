@@ -45,5 +45,11 @@ router.get('/showAll', function (req, res, next) {
   })
 })
 
+router.get('/:id/edit', function (req, res, next) {
+  validations.findOneList(req.params.id).then(function (list) {
+    res.render('lists/edit', {list: list})
+  })
+})
+
 
 module.exports = router;

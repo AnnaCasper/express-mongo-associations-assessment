@@ -10,10 +10,11 @@ block content
     div.list
       div.side
       div.title 
-        h1 To Do
-      div.item
-        input(type="checkbox" class="checkbox")
-        p Build a muthafucking list maker
+        h1 #{list.name}
+      for item in list.items
+        div.item
+          input(type="checkbox" class="checkbox")
+          p #{item}
       div.item
       div.item
       div.item
