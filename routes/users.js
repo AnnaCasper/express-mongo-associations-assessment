@@ -12,17 +12,24 @@ router.get('/signup', function(req, res, next){
 })
 
 router.post('/signup', function(req, res, next){
-  var errors = validations.signUp(req.body.username, req.body.email, req.body.createPassword, req.body.confirmPassword);
-  console.log(errors);
-  if(errors.length > 0){
-    res.render('users/new', {errorMessage: 'Please correct the errors listed below:',
-                                errors: errors,
-                                username: req.body.username,
-                                email: req.body.email})
-  } else {
-    script.addUser(req.body.username, req.body.email, req.body.createPassword)
-    res.redirect('/lists')
-  }
+  validations.signUp(req.body.username, req.body.email, req.body.createPassword, req.body.confirmPassword).then(function(data){
+    if(data === 'success'){
+      validations.findUser(req.body.email).then(function (user) {
+        req.session.currentUser = user._id
+        res.redirect('/lists')
+      })
+    } else {
+      res.render('users/new', {errorMessage: 'Please correct the errors listed below:',
+                                  errors: data,
+                                  username: req.body.username,
+                                  email: req.body.email})
+    }
+  })
+})
+
+router.get('/logout', function(req, res, next){
+  req.session = null
+  res.redirect('/');
 })
 
 module.exports = router;

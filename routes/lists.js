@@ -4,19 +4,31 @@ var script = require('../lib/script.js');
 var validations = require('../lib/validations.js')
 
 router.get('/', function(req, res, next){
-  res.render('lists/index')
+  if(req.session.currentUser){
+    res.render('lists/index')
+  } else {
+    res.redirect('/');
+  }
 });
 
 router.get('/show', function(req, res, next) {
-  res.render('lists/show');
+  if(req.session.currentUser){
+    res.render('lists/show');
+  } else {
+    res.redirect('/');
+  }
 });
 
 router.get('/new', function(req, res, next){
-  res.render('lists/new')
+  if(req.session.currentUser){
+    res.render('lists/new')
+  } else {
+    res.redirect('/');
+  }
 });
 
 router.post("/new", function(req, res, next){
-  var errors = validations.validateNew(req.body.title, req.body.item);
+  var errors = validations.newList(req.body.title, req.body.item);
   if(errors.length > 0){
     res.render('lists/new', {errorMessage: 'Please fix the errors listed below:', errors: errors})
   } else {
