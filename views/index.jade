@@ -1,14 +1,18 @@
 extends layout
 
 block content
-  h1 LystMkr
+  header 
+    h1.logo LystMkr
   p
-  h1 Login
-  form(method="post" action="/users/login")
-    input(type="text" name="email" placeholder="Email")
+  fieldset
+    legend
+    h1 Login
+    form(method="post" action="/users/login")
+      input(type="text" name="email" placeholder="Email")
+      p
+      input(type="password" name="password" placeholder="Password")
+      p
+      input(type="submit" value="Login" class="button")
     p
-    input(type="password" name="password" placeholder="Password")
-    p
-    input(type="submit" value="Login")
-  p Don't have an account? 
-    a(href="/users/signup") Sign Up!
+    p Don't have an account? 
+      a(href="/users/signup") Sign Up!

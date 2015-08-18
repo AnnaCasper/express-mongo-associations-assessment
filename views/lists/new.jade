@@ -2,17 +2,22 @@ extends ../layout
 
 block content
   header 
-    h1.logo LystMkr
+    a(href="/users/logout")
+      p.logout Logout
+    a(href="/lists")
+      h1.logo LystMkr
   main 
-    h1 New List
-    if errors
-      p.errors #{errorMessage}
-      for error in errors
-        p.errors #{error}
-    form(method="post" action="/lists/new")
-      input(name="title" placeholder="title") 
-      p
-      input(name="item" placeholder="item")
-      p
-      input(type="submit" value="Create List")
+    fieldset
+      legend
+      h1 New Lyst
+      if errors
+        p.errors #{errorMessage}
+        for error in errors
+          p.errors #{error}
+      form(method="post" action="/lists/new")
+        input(name="title" placeholder="Title") 
+        p
+        input(name="item" placeholder="Item")
+        p
+        input(type="submit" value="Create Lyst" class="button")
   footer

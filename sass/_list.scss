@@ -1,6 +1,80 @@
 .list {
-  width: 60%;
-  height: 300px;
+  width: 50%;
+  height: 600px;
   margin: 0 auto;
   background-color: $white;
+  margin-top: 40px;
+  box-shadow: 10px 10px 10px $darkpurple;
+  overflow: auto;
+  border-radius: 2px;
+}
+
+.title {
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid $blue;
+}
+
+.item {
+  text-align: left;
+  border-bottom: 1px solid $blue;
+  height: 30px;
+  overflow: auto;
+  padding-left: 85px;
+}
+
+.side {
+  position: absolute;
+  border-right: 2px solid $orange;
+  height: 600px;
+  width: 80px;
+}
+
+.checkbox {
+  float: left;
+  height: 25px;
+  width: 30px;
+}
+
+.miniList {
+  float: left;
+  text-align: center;
+  width: 30%;
+  height: 400px;
+  background-color: $white;
+  margin-top: 100px;
+  margin-left: 35px;
+  box-shadow: 10px 10px 10px $darkpurple;
+  border-radius: 2px;
+}
+
+.miniTitle {
+  height: 50px;
+  padding: 10px;
+  border-bottom: 1px solid $blue;
+}
+
+.miniItem {
+  border-bottom: 1px solid $blue;
+  height: 30px;
+  overflow: auto;
+  padding-left: 65px;
+}
+
+.miniSide {
+  position: absolute;
+  border-right: 2px solid $orange;
+  height: 400px;
+  width: 60px;
+}
+
+.words {
+  word-wrap: break-word;
+  font-size: 60px;
+  position: absolute;
+  padding: 30px;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
 }

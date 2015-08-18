@@ -2,7 +2,53 @@ extends ../layout
 
 block content
   header 
+    a(href="/users/logout")
+      p.logout Logout
     h1.logo LystMkr
   main 
-    a(href="/lists/new") Create New List
+    a(href="/lists/new") 
+      div.miniList 
+        div.miniSide
+        h2.words Create New Lyst
+        div.miniTitle
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+    a(href="/lists/showAll") 
+      div.miniList 
+        div.miniSide 
+        h2.words View My Lysts
+        div.miniTitle
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem 
+    a(href="/lists/showAllShared") 
+      div.miniList 
+        div.miniSide 
+        h2.words View Shared Lysts
+        div.miniTitle
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem
+        div.miniItem               
   footer
