@@ -35,3 +35,14 @@ fieldset {
 .button:hover {
   cursor: pointer;
 }
+
+.additional {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: $blue;
+  color: $darkpurple;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}

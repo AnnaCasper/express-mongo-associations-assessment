@@ -267,3 +267,13 @@ fieldset {
 
 .button:hover {
   cursor: pointer; }
+
+.additional {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #779FA1;
+  color: #564154;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px; }
