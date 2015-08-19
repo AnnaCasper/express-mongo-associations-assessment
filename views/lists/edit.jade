@@ -12,27 +12,63 @@ block content
         div.side
         div.title 
           h1 #{list.name}
-        for item in list.items
-          div.item
-            input(type="checkbox" class="checkbox")
-            input(type="text" name="item" class="itemInput" value=item) 
+        div.item
+          input(type="checkbox" id="item" class="checkbox" name="checkItem")
+          label(for="item")
+            input(name="item" value='#{list.items.name}' class="itemInput")
+        div.item
+          input(type="checkbox" id="item1" class="checkbox" name="checkItem1")
+          label(for="item1")
+            input(name="item1" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item2" class="checkbox" name="checkItem2")
+          label(for="item2")
+            input(name="item2" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item3" class="checkbox" name="checkItem3")
+          label(for="item3")
+            input(name="item3" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item4" class="checkbox" name="checkItem4")
+          label(for="item4")
+            input(name="item4" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item5" class="checkbox" name="checkItem5")
+          label(for="item5")
+            input(name="item5" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item6" class="checkbox" name="checkItem6")
+          label(for="item6")
+            input(name="item6" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item7" class="checkbox" name="checkItem7")
+          label(for="item7")
+            input(name="item7" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item8" class="checkbox" name="checkItem8")
+          label(for="item8")
+            input(name="item8" placeholder="Item" class="itemInput")
+        div.item
+          input(type="checkbox" id="item9" class="checkbox"  name="checkItem9")
+          label(for="item9")
+            input(name="item9" placeholder="Item" class="itemInput")
         div.item
         div.item
         div.item
         div.item
         div.item
         div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-        div.item
-      input(type="submit" value="Save Edits" class="saveEdits")
+        div.item 
+      input(type="submit" value="Save Edits" class="saveEditButton")
+    form(method="post" action="/lists/" + list._id + "/share")
+      label(for="shareEmail" class="sharedEmail") 
+        h3 Share this lyst with a friend!
+      if errors
+        p.errors #{error}
+      input(type="email" name="sharedEmail" id="sharedEmail" placeholder="Friend's Email" class="sharedEmail")
+      p
+      input(type="submit" value="Share" class="saveEdits")
+    p
     form(method="post" action="/lists/" + list._id + "/delete")
-      input(type="submit" value="Delete List" class="saveEdits") 
+      input(type="submit" value="Delete Lyst" class="deleteButton") 
   footer

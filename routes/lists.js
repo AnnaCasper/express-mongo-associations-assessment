@@ -63,13 +63,50 @@ router.get('/:id/edit', function (req, res, next) {
   })
 });
 
+router.post('/:id/edit', function (req, res, next) {
+  var items = [{item: req.body.item,
+                check: req.body.checkItem},
+                {item: req.body.item1,
+                check: req.body.checkItem1},
+                {item: req.body.item2,
+                check: req.body.checkItem2},
+                {item: req.body.item3,
+                check: req.body.checkItem3},
+                {item: req.body.item4,
+                check: req.body.checkItem4},
+                {item: req.body.item5,
+                check: req.body.checkItem5},
+                {item: req.body.item6,
+                check: req.body.checkItem6},
+                {item: req.body.item7,
+                check: req.body.checkItem7},
+                {item: req.body.item8,
+                check: req.body.checkItem8},
+                {item: req.body.item9,
+                check: req.body.checkItem9}]
+  validations.updateOne(req.body.title, items, req.session.currentUser)
+})
+
 router.post('/:id/delete', function (req, res, next) {
   validations.delete(req.params.id).then(function (data) {
     if(data === 'success'){
       res.redirect('/lists/showAll')
     }
   })
-})
+});
 
+router.post('/:id/share', function (req, res, next) {
+  validations.shareList(req.params.id, req.body.sharedEmail, req.session.currentUser).then(function (data) {
+    if(data === 'success'){
+      res.redirect('/lists/showAll')
+    } else {
+      res.render('lists/' + req.params.id + '/edit', {errors: data})
+    }
+  })
+});
+
+router.get('/showAllShared', function (req, res, next) {
+  res.render('lists/showAllShared')
+})
 
 module.exports = router;

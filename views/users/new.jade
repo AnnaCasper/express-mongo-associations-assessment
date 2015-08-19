@@ -2,9 +2,10 @@ extends ../layout
 
 block content
   header 
-    h1.logo LystMkr
+    a(href="/")
+      h1.logo LystMkr
   main
-    fieldset
+    fieldset.signup
       legend
       h1 Sign Up
       if errors
@@ -14,7 +15,7 @@ block content
       form(method="post" action="/users/signup")
         input(type="text" name="username" placeholder="Username")
         p
-        input(type="text" name="email" placeholder="Email")
+        input(type="email" name="email" placeholder="Email")
         p
         input(type="password" name="createPassword" placeholder="Create Password")
         p

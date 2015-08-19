@@ -26,9 +26,21 @@ router.post('/signup', function(req, res, next){
   })
 })
 
+router.post('/login', function(req, res, next){
+  validations.login(req.body.email, req.body.password).then(function (data) {
+    if(data.username){
+      req.session.currentUser = data._id
+      res.redirect('/lists')
+    } else {
+      res.render('index', {errors: data})
+    }
+  })
+})
+
 router.get('/logout', function(req, res, next){
   req.session = null
   res.redirect('/');
 })
+
 
 module.exports = router;

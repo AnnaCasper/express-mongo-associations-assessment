@@ -15,9 +15,9 @@ block content
         for error in errors
           p.errors #{error}
       form(method="post" action="/lists/new")
-        input(name="title" placeholder="Title") 
+        input(name="title" placeholder="Title" class="inputTitle") 
         p
-        input(type="checkbox" id="item" class="checkbox hidden" name="checkItem" checked)
+        input(type="checkbox" id="item" class="checkbox hidden" name="checkItem")
         label(for="item")
           input(name="item" placeholder="Item")
         p

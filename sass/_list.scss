@@ -1,10 +1,12 @@
 .list {
   display: block;
+  float:left;
   width: 50%;
   height: 600px;
-  margin: 0 auto;
+  margin-left: 150px;
   background-color: $white;
   margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 10px 10px 10px $darkpurple;
   overflow: auto;
   border-radius: 2px;
@@ -80,6 +82,7 @@
 }
 
 .listAll {
+  display: block;
   float: left;
   width: 30%;
   height: 400px;
@@ -119,4 +122,9 @@
   float: left;
   height: 25px;
   width: 30px;
+}
+
+.noLists {
+  margin: 0 auto;
+  text-align: center;
 }
