@@ -12,7 +12,7 @@ input {
 
 fieldset {
   width: 30%;
-  height: 400px;
+  height: 720px;
   margin: 0 auto;
   background-color: $white;
   margin-top: 40px;
@@ -21,6 +21,15 @@ fieldset {
   border-radius: 3px;
   text-align: center;
   padding: 20px;
+  margin-bottom: 40px;
+}
+
+fieldset.login {
+  height: 300px;
+}
+
+fieldset.signup {
+  height: 400px;  
 }
 
 .button {
@@ -49,4 +58,81 @@ fieldset {
 }
 .additional:hover{
   cursor: pointer;
+}
+
+.itemInput {
+  height: 25px;
+  width:550px;
+  background-color: $white;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  color: $darkpurple;
+  border: 1px solid $white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.inputTitle {
+  border: 2px solid $darkpurple;
+}
+
+.saveEdits {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: $orange;
+  border: 2px solid $darkpurple;
+  margin: 30px;
+}
+
+.saveEditButton {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: $orange;
+  border: 2px solid $darkpurple;
+  margin: 30px;
+  margin-top: 600px;
+  position: absolute;
+}
+
+.deleteButton {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: $orange;
+  border: 2px solid $darkpurple;
+  margin: 30px;
+  margin-top:457px;
+}
+
+.saveEdits:hover {
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  cursor: pointer;
+}
+
+.saveEditButton:hover{
+  cursor: pointer;
+}
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.sharedEmail {
+  float: left;
+  margin-left: 30px;
+}
+
+.checkbox:hover {
+  cursor: pointer
 }

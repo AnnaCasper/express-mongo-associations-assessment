@@ -76,11 +76,14 @@ header {
   line-height: 80px; }
 
 .list {
+  display: block;
+  float: left;
   width: 50%;
   height: 600px;
-  margin: 0 auto;
+  margin-left: 150px;
   background-color: #E0CBA8;
   margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 10px 10px 10px #564154;
   overflow: auto;
   border-radius: 2px; }
@@ -146,13 +149,15 @@ header {
   margin: 0 auto; }
 
 .listAll {
+  display: block;
   float: left;
   width: 30%;
   height: 400px;
   margin: 0 auto;
   background-color: #E0CBA8;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 35px;
+  margin-bottom: 20px;
   box-shadow: 10px 10px 10px #564154;
   overflow: auto;
   border-radius: 2px; }
@@ -180,6 +185,10 @@ header {
   float: left;
   height: 25px;
   width: 30px; }
+
+.noLists {
+  margin: 0 auto;
+  text-align: center; }
 
 html {
   font-size: 1em; }
@@ -209,7 +218,11 @@ h2 {
   font-family: Laila, sans-serif; }
 
 h3 {
-  font-size: 1.999em; }
+  font-size: 1.999em;
+  color: #564154;
+  font-weight: bold;
+  font-family: Laila, sans-serif;
+  text-shadow: 2px 2px rgba(224, 203, 168, 0.5); }
 
 h4 {
   font-size: 1.414em; }
@@ -247,7 +260,7 @@ input {
 
 fieldset {
   width: 30%;
-  height: 400px;
+  height: 720px;
   margin: 0 auto;
   background-color: #E0CBA8;
   margin-top: 40px;
@@ -255,7 +268,14 @@ fieldset {
   overflow: auto;
   border-radius: 3px;
   text-align: center;
-  padding: 20px; }
+  padding: 20px;
+  margin-bottom: 40px; }
+
+fieldset.login {
+  height: 300px; }
+
+fieldset.signup {
+  height: 400px; }
 
 .button {
   width: 120px;
@@ -280,4 +300,71 @@ fieldset {
   border-radius: 5px; }
 
 .additional:hover {
+  cursor: pointer; }
+
+.itemInput {
+  height: 25px;
+  width: 550px;
+  background-color: #E0CBA8;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  color: #564154;
+  border: 1px solid #E0CBA8;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.inputTitle {
+  border: 2px solid #564154; }
+
+.saveEdits {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: #FF6542;
+  border: 2px solid #564154;
+  margin: 30px; }
+
+.saveEditButton {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: #FF6542;
+  border: 2px solid #564154;
+  margin: 30px;
+  margin-top: 600px;
+  position: absolute; }
+
+.deleteButton {
+  float: left;
+  width: 120px;
+  height: 40px;
+  font-family: Laila, sans-serif;
+  font-weight: bold;
+  color: #FF6542;
+  border: 2px solid #564154;
+  margin: 30px;
+  margin-top: 457px; }
+
+.saveEdits:hover {
+  cursor: pointer; }
+
+.deleteButton:hover {
+  cursor: pointer; }
+
+.saveEditButton:hover {
+  cursor: pointer; }
+
+.hidden {
+  visibility: hidden;
+  display: none; }
+
+.sharedEmail {
+  float: left;
+  margin-left: 30px; }
+
+.checkbox:hover {
   cursor: pointer; }
