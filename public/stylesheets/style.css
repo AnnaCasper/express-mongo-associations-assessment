@@ -359,7 +359,8 @@ fieldset.signup {
   color: #FF6542;
   border: 2px solid #564154;
   margin: 30px;
-  margin-top: 457px; }
+  margin-top: 57px;
+  margin-left: 200px; }
 
 .saveEdits:hover {
   cursor: pointer; }
