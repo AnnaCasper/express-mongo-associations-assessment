@@ -194,10 +194,13 @@ header {
 .sharedFriends {
   font-weight: bold;
   width: 35%;
-  height: 300px;
+  height: 250px;
   float: right;
   margin-right: 35px;
   overflow: auto; }
+
+.shareYourList {
+  width: 100%; }
 
 html {
   font-size: 1em; }
@@ -362,7 +365,7 @@ fieldset.signup {
   color: #FF6542;
   border: 2px solid #564154;
   margin: 30px;
-  margin-top: 57px;
+  margin-top: 106px;
   margin-left: 200px; }
 
 .saveEdits:hover {
@@ -380,7 +383,8 @@ fieldset.signup {
 
 .sharedEmail {
   float: left;
-  margin-left: 30px; }
+  margin-left: 30px;
+  width: 35%; }
 
 .checkbox:hover {
   cursor: pointer; }

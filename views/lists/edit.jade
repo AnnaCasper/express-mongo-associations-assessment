@@ -95,9 +95,10 @@ block content
       input(type="submit" value="Save Edits" class="saveEditButton")
     form(method="post" action="/lists/" + list._id + "/share")
       label(for="shareEmail" class="sharedEmail") 
-        h3 Share this lyst with a friend!
-      if errors
-        p.errors #{error}
+        div.shareYourList
+          h3 Share this lyst with a friend!
+        if errors
+          p.errors #{errors}
       input(type="email" name="sharedEmail" id="sharedEmail" placeholder="Friend's Email" class="sharedEmail")
       p
       input(type="submit" value="Share" class="saveEdits")

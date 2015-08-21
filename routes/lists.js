@@ -108,7 +108,9 @@ router.post('/:id/share', function (req, res, next) {
     if(data === 'success'){
       res.redirect('/lists/' + req.params.id + '/edit')
     } else {
-      res.render('lists/' + req.params.id + '/edit', {errors: data})
+      validations.findOneList(req.params.id).then(function (list) {
+        res.render('lists/edit', {list: list, errors: data})
+      })
     }
   })
 });
