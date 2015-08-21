@@ -51,7 +51,11 @@ router.post("/new", function(req, res, next){
 
 router.get('/showAll', function (req, res, next) {
   validations.showAll(req.session.currentUser).then(function (lists) {
-    res.render('lists/showAll', {lists: lists})
+    if(lists === []){
+      res.render('lists/showAll')
+    } else {
+      res.render('lists/showAll', {lists: lists})
+    }
   })
 })
 
