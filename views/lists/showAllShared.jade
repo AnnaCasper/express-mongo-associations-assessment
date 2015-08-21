@@ -9,12 +9,12 @@ block content
   main
     if lists
       for list in lists
-        a(href="/lists/" + list._id + "/edit")
+        a(href="/lists/" + list[0]._id + "/edit")
           div.listAll
             div.sideAll
             div.titleAll 
-              h1 #{list.name}
-            for item in list.items
+              h1 #{list[0].name}
+            for item in list[0].items
               div.itemAll
                 if item.check
                   input(type="checkbox" class="checkbox" checked disabled)

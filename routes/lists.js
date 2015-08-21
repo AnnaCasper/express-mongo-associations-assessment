@@ -114,7 +114,8 @@ router.post('/:id/share', function (req, res, next) {
 });
 
 router.get('/showAllShared', function (req, res, next) {
-  validations.showAllShared(req.session.currentUser).then(function (list) {
+  validations.showAllShared(req.session.currentUser).then(function (lists) {
+    console.log(lists);
     res.render('lists/showAllShared', {lists: lists})
   })
 })
