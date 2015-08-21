@@ -199,6 +199,14 @@ header {
   margin-right: 35px;
   overflow: auto; }
 
+.listOwner {
+  font-weight: bold;
+  width: 35%;
+  height: 40px;
+  float: right;
+  margin-right: 35px;
+  overflow: auto; }
+
 .shareYourList {
   width: 100%; }
 

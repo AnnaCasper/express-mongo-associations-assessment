@@ -103,6 +103,8 @@ block content
       p
       input(type="submit" value="Share" class="saveEdits")
     p
+    div.listOwner
+      p This lyst is currently owned by: #{list.owner}
     div.sharedFriends
       p This lyst is currently shared with:
       for name in list.sharedNames
