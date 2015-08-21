@@ -88,7 +88,7 @@ router.post('/:id/edit', function (req, res, next) {
                 check: req.body.checkItem9}]
   validations.updateOne(req.params.id, items).then(function (data) {
     if(data === 'success'){
-      res.redirect('/lists/showAll')
+      res.redirect('/lists/' + req.params.id + '/edit')
     } else {
       res.render('lists/' + req.params.id + '/edit', {errorMessage: 'Please fix the errors listed below:', errors: data})
     }
@@ -106,7 +106,7 @@ router.post('/:id/delete', function (req, res, next) {
 router.post('/:id/share', function (req, res, next) {
   validations.shareList(req.params.id, req.body.sharedEmail, req.session.currentUser).then(function (data) {
     if(data === 'success'){
-      res.redirect('/lists/showAll')
+      res.redirect('/lists/' + req.params.id + '/edit')
     } else {
       res.render('lists/' + req.params.id + '/edit', {errors: data})
     }
