@@ -51,7 +51,7 @@ router.post("/new", function(req, res, next){
 
 router.get('/showAll', function (req, res, next) {
   validations.showAll(req.session.currentUser).then(function (lists) {
-    if(lists === []){
+    if(lists.length === 0){
       res.render('lists/showAll')
     } else {
       res.render('lists/showAll', {lists: lists})
@@ -115,8 +115,11 @@ router.post('/:id/share', function (req, res, next) {
 
 router.get('/showAllShared', function (req, res, next) {
   validations.showAllShared(req.session.currentUser).then(function (lists) {
-    console.log(lists);
-    res.render('lists/showAllShared', {lists: lists})
+    if(lists.length === 0){
+      res.render('lists/showAllShared')
+    } else {
+      res.render('lists/showAllShared', {lists: lists})
+    }
   })
 })
 
