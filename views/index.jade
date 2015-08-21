@@ -7,15 +7,22 @@ block content
   fieldset.login
     legend
     h1 Login
-    form(method="post" action="/users/login")
-      if errors
-        for error in errors
-          p.errors #{error}
-      input(type="text" name="email" placeholder="Email")
-      p
-      input(type="password" name="password" placeholder="Password")
-      p
-      input(type="submit" value="Login" class="button")
+    if errors
+      for error in errors
+        p.errors #{error}
+      form(method="post" action="/users/login")
+        input(type="text" name="email" value=email)
+        p
+        input(type="password" name="password" placeholder="Password")
+        p
+        input(type="submit" value="Login" class="button")
+    else
+      form(method="post" action="/users/login")
+        input(type="text" name="email" placeholder="Email")
+        p
+        input(type="password" name="password" placeholder="Password")
+        p
+        input(type="submit" value="Login" class="button")
     p
     p Don't have an account? 
       a(href="/users/signup") Sign Up!

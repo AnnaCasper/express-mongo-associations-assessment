@@ -32,7 +32,7 @@ router.post('/login', function(req, res, next){
       req.session.currentUser = data._id
       res.redirect('/lists')
     } else {
-      res.render('index', {errors: data})
+      res.render('index', {errors: data, email: req.body.email})
     }
   })
 })

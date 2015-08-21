@@ -12,13 +12,24 @@ block content
         p.errors #{errorMessage}
         for error in errors
           p.errors #{error}
-      form(method="post" action="/users/signup")
-        input(type="text" name="username" placeholder="Username")
-        p
-        input(type="email" name="email" placeholder="Email")
-        p
-        input(type="password" name="createPassword" placeholder="Create Password")
-        p
-        input(type="password" name="confirmPassword" placeholder="Confirm Password")
-        p
-        input(type="submit" value="Sign Up" class="button")
+        form(method="post" action="/users/signup")
+          input(type="text" name="username" value=username)
+          p
+          input(type="email" name="email" value=email)
+          p
+          input(type="password" name="createPassword" placeholder="Create Password")
+          p
+          input(type="password" name="confirmPassword" placeholder="Confirm Password")
+          p
+          input(type="submit" value="Sign Up" class="button")
+      else
+        form(method="post" action="/users/signup")
+          input(type="text" name="username" placeholder="Username")
+          p
+          input(type="email" name="email" placeholder="Email")
+          p
+          input(type="password" name="createPassword" placeholder="Create Password")
+          p
+          input(type="password" name="confirmPassword" placeholder="Confirm Password")
+          p
+          input(type="submit" value="Sign Up" class="button")
