@@ -8,50 +8,83 @@ block content
       h1.logo LystMkr
   main 
     form(method="post" action="/lists/" + list._id + "/edit")
+      if errors
+        p.errors #{errorMessage}
+        p.errors #{error}
       div.list
         div.side
         div.title 
           h1 #{list.name}
         div.item
-          input(type="checkbox" id="item" class="checkbox" name="checkItem")
+          if list.items[0].check
+            input(type="checkbox" id="item" class="checkbox" name="checkItem" checked)
+          else
+            input(type="checkbox" id="item" class="checkbox" name="checkItem")
           label(for="item")
             input(name="item" value='#{list.items[0].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item1" class="checkbox" name="checkItem1")
+          if list.items[1].check
+            input(type="checkbox" id="item" class="checkbox" name="checkItem" checked)
+          else
+            input(type="checkbox" id="item1" class="checkbox" name="checkItem1")
           label(for="item1")
-            input(name="item1" placeholder="Item" class="itemInput")
+            input(name="item1" value='#{list.items[1].name}'  class="itemInput")
         div.item
-          input(type="checkbox" id="item2" class="checkbox" name="checkItem2")
+          if list.items[2].check
+            input(type="checkbox" id="item2" class="checkbox" name="checkItem2" checked)
+          else
+            input(type="checkbox" id="item2" class="checkbox" name="checkItem2")
           label(for="item2")
-            input(name="item2" placeholder="Item" class="itemInput")
+            input(name="item2" value='#{list.items[2].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item3" class="checkbox" name="checkItem3")
+          if list.items[3].check
+            input(type="checkbox" id="item3" class="checkbox" name="checkItem3" checked)
+          else
+            input(type="checkbox" id="item3" class="checkbox" name="checkItem3")
           label(for="item3")
-            input(name="item3" placeholder="Item" class="itemInput")
+            input(name="item3" value='#{list.items[3].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item4" class="checkbox" name="checkItem4")
+          if list.items[4].check
+            input(type="checkbox" id="item4" class="checkbox" name="checkItem4" checked)
+          else
+            input(type="checkbox" id="item4" class="checkbox" name="checkItem4")
           label(for="item4")
-            input(name="item4" placeholder="Item" class="itemInput")
+            input(name="item4" value='#{list.items[4].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item5" class="checkbox" name="checkItem5")
+          if list.items[5].check
+            input(type="checkbox" id="item5" class="checkbox" name="checkItem5" checked)
+          else
+            input(type="checkbox" id="item5" class="checkbox" name="checkItem5")
           label(for="item5")
-            input(name="item5" placeholder="Item" class="itemInput")
+            input(name="item5" value='#{list.items[5].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item6" class="checkbox" name="checkItem6")
+          if list.items[6].check
+            input(type="checkbox" id="item6" class="checkbox" name="checkItem6" checked)
+          else
+            input(type="checkbox" id="item6" class="checkbox" name="checkItem6")
           label(for="item6")
-            input(name="item6" placeholder="Item" class="itemInput")
+            input(name="item6" value='#{list.items[6].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item7" class="checkbox" name="checkItem7")
+          if list.items[7].check
+            input(type="checkbox" id="item7" class="checkbox" name="checkItem7" checked)
+          else
+            input(type="checkbox" id="item7" class="checkbox" name="checkItem7")
           label(for="item7")
-            input(name="item7" placeholder="Item" class="itemInput")
+            input(name="item7" value='#{list.items[7].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item8" class="checkbox" name="checkItem8")
+          if list.items[8].check
+            input(type="checkbox" id="item8" class="checkbox" name="checkItem8" checked)
+          else
+            input(type="checkbox" id="item8" class="checkbox" name="checkItem8")
           label(for="item8")
-            input(name="item8" placeholder="Item" class="itemInput")
+            input(name="item8" value='#{list.items[8].name}' class="itemInput")
         div.item
-          input(type="checkbox" id="item9" class="checkbox"  name="checkItem9")
+          if list.items[9].check
+            input(type="checkbox" id="item9" class="checkbox" name="checkItem9" checked)
+          else
+            input(type="checkbox" id="item9" class="checkbox"  name="checkItem9")
           label(for="item9")
-            input(name="item9" placeholder="Item" class="itemInput")
+            input(name="item9" value='#{list.items[9].name}' class="itemInput")
         div.item
         div.item
         div.item
@@ -69,6 +102,10 @@ block content
       p
       input(type="submit" value="Share" class="saveEdits")
     p
+    div.sharedFriends
+      p This lyst is currently shared with:
+      for name in list.sharedNames
+        p= name
     form(method="post" action="/lists/" + list._id + "/delete")
       input(type="submit" value="Delete Lyst" class="deleteButton") 
   footer

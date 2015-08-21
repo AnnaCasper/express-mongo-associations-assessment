@@ -104,6 +104,7 @@
 }
 
 .itemAll {
+  font-weight: normal;
   text-align: left;
   border-bottom: 1px solid $blue;
   height: 30px;
@@ -127,4 +128,13 @@
 .noLists {
   margin: 0 auto;
   text-align: center;
+}
+
+.sharedFriends {
+  font-weight: bold;
+  width: 35%;
+  height: 300px;
+  float: right;
+  margin-right: 35px;
+  overflow: auto;
 }

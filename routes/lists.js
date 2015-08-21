@@ -57,7 +57,6 @@ router.get('/showAll', function (req, res, next) {
 
 router.get('/:id/edit', function (req, res, next) {
   validations.findOneList(req.params.id).then(function (list) {
-    console.log(list);
     res.render('lists/edit', {list: list})
   })
 });
@@ -83,7 +82,13 @@ router.post('/:id/edit', function (req, res, next) {
                 check: req.body.checkItem8},
                 {item: req.body.item9,
                 check: req.body.checkItem9}]
-  validations.updateOne(req.body.title, items, req.session.currentUser)
+  validations.updateOne(req.params.id, items).then(function (data) {
+    if(data === 'success'){
+      res.redirect('/lists/showAll')
+    } else {
+      res.render('lists/' + req.params.id + '/edit', {errorMessage: 'Please fix the errors listed below:', errors: data})
+    }
+  })
 })
 
 router.post('/:id/delete', function (req, res, next) {
@@ -105,7 +110,9 @@ router.post('/:id/share', function (req, res, next) {
 });
 
 router.get('/showAllShared', function (req, res, next) {
-  res.render('lists/showAllShared')
+  validations.showAllShared(req.session.currentUser).then(function (list) {
+    res.render('lists/showAllShared', {lists: lists})
+  })
 })
 
 module.exports = router;
