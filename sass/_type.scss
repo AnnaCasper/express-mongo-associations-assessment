@@ -15,6 +15,9 @@ p {margin-bottom: .7em;}
 
 .showItem {
   margin-bottom: 0;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: 30px;
 }
 
 h1, h2, h3, h4 {
