@@ -169,6 +169,7 @@ header {
   border-bottom: 1px solid #779FA1; }
 
 .itemAll {
+  font-weight: normal;
   text-align: left;
   border-bottom: 1px solid #779FA1;
   height: 30px;
@@ -190,6 +191,14 @@ header {
   margin: 0 auto;
   text-align: center; }
 
+.sharedFriends {
+  font-weight: bold;
+  width: 35%;
+  height: 300px;
+  float: right;
+  margin-right: 35px;
+  overflow: auto; }
+
 html {
   font-size: 1em; }
 
@@ -202,6 +211,9 @@ body {
 
 p {
   margin-bottom: .7em; }
+
+.showItem {
+  margin-bottom: 0; }
 
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;

@@ -14,13 +14,13 @@ block content
             div.sideAll
             div.titleAll 
               h1 #{list.name}
-            for item in items
+            for item in list.items
               div.itemAll
                 if item.check
                   input(type="checkbox" class="checkbox" checked disabled)
                 else
                   input(type="checkbox" class="checkbox" disabled)
-                p #{item.name}
+                p.showItem #{item.name}
     else
       div.noLists
         h3 You don't have any lysts yet!

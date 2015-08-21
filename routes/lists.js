@@ -41,7 +41,6 @@ router.post("/new", function(req, res, next){
                 {item: req.body.item9,
                 check: req.body.checkItem9}]
   validations.newList(req.body.title, items, req.session.currentUser).then(function (data) {
-    console.log(data);
     if(data === 'success'){
       res.redirect('/lists')
     } else {
@@ -52,8 +51,11 @@ router.post("/new", function(req, res, next){
 
 router.get('/showAll', function (req, res, next) {
   validations.showAll(req.session.currentUser).then(function (lists) {
-    console.log(lists);
-    res.render('lists/showAll', {lists: lists})
+    if(lists === []){
+      res.render('lists/showAll')
+    } else {
+      res.render('lists/showAll', {lists: lists})
+    }
   })
 })
 
@@ -84,7 +86,13 @@ router.post('/:id/edit', function (req, res, next) {
                 check: req.body.checkItem8},
                 {item: req.body.item9,
                 check: req.body.checkItem9}]
-  validations.updateOne(req.body.title, items, req.session.currentUser)
+  validations.updateOne(req.params.id, items).then(function (data) {
+    if(data === 'success'){
+      res.redirect('/lists/showAll')
+    } else {
+      res.render('lists/' + req.params.id + '/edit', {errorMessage: 'Please fix the errors listed below:', errors: data})
+    }
+  })
 })
 
 router.post('/:id/delete', function (req, res, next) {
@@ -106,7 +114,9 @@ router.post('/:id/share', function (req, res, next) {
 });
 
 router.get('/showAllShared', function (req, res, next) {
-  res.render('lists/showAllShared')
+  validations.showAllShared(req.session.currentUser).then(function (list) {
+    res.render('lists/showAllShared', {lists: lists})
+  })
 })
 
 module.exports = router;
