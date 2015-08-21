@@ -41,7 +41,6 @@ router.post("/new", function(req, res, next){
                 {item: req.body.item9,
                 check: req.body.checkItem9}]
   validations.newList(req.body.title, items, req.session.currentUser).then(function (data) {
-    console.log(data);
     if(data === 'success'){
       res.redirect('/lists')
     } else {
@@ -52,13 +51,13 @@ router.post("/new", function(req, res, next){
 
 router.get('/showAll', function (req, res, next) {
   validations.showAll(req.session.currentUser).then(function (lists) {
-    // console.log(lists);
     res.render('lists/showAll', {lists: lists})
   })
 })
 
 router.get('/:id/edit', function (req, res, next) {
   validations.findOneList(req.params.id).then(function (list) {
+    console.log(list);
     res.render('lists/edit', {list: list})
   })
 });
